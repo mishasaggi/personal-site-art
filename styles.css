@@ -4,7 +4,7 @@
 
 body {
   padding: 100px 50px;
-  max-width: 4000px;
+  max-width: 2000px;
   margin: 0 auto;
   font-family: sans-serif;
   /* background: linear-gradient(to right, #CACFD2, #ECF0F1); */
@@ -32,7 +32,7 @@ p {
 
 .gallery {
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 45px;
   grid-template-columns: repeat(auto-fill, 100px);
   grid-auto-rows: 100px;
   grid-auto-flow: dense;

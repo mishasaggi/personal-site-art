@@ -56,7 +56,7 @@ function close() {
 }
 
 // create layout with varying h and v spans where (sometimes randomly) picked image is added
-const gridLayouts = Array.from({ length: 90 }, () => [randomNumber(4), randomNumber(4)])
+const gridLayouts = Array.from({ length: 90 }, () => [randomNumber(3), randomNumber(3)])
   .concat(Array.from({ length: 18 }, () => [1, 1]));
 
 const gridLayoutHtml = gridLayouts.map(layout => generateHTML(layout, pickImage())).join('');
