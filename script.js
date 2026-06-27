@@ -8,7 +8,7 @@ console.log('Welcome to my art gallery! I know the pictures have pretty inconsis
 function generateHTML([h, v], image) {
   return `
     <div class="item h${h} v${v}">
-      <img src="images/${image}">
+      <img src="images/${image}" loading="lazy">
       <div class="item__overlay">
         <button>View →</button>
       </div>
