@@ -29,15 +29,11 @@ let seen = new Set();
 function pickImage() {
   let pool;
   const unseen = images.filter(img => !seen.has(img)); // array
-  const underLimit = images.filter(img => counts[img] < 2); // array
   const aboutToExceed = images.some(img => counts[img] === 2); //boolean
 
   if (unseen.length > 0 && aboutToExceed) {
     //prioritize unseen images
     pool = unseen;
-  } else if (underLimit.length > 0) {
-    // prefer images under the repetition limit
-    pool = underLimit;
   } else {
     // everything has been seen and used, use full randomness for further repetition
     pool = images
@@ -60,7 +56,7 @@ function close() {
 }
 
 // create layout with varying h and v spans where (sometimes randomly) picked image is added
-const gridLayouts = Array.from({ length: 123 }, () => [randomNumber(4), randomNumber(4)])
+const gridLayouts = Array.from({ length: 90 }, () => [randomNumber(4), randomNumber(4)])
   .concat(Array.from({ length: 18 }, () => [1, 1]));
 
 const gridLayoutHtml = gridLayouts.map(layout => generateHTML(layout, pickImage())).join('');
